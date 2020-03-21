@@ -3,6 +3,7 @@ package com.example.demo.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,21 +16,15 @@ public class Tourist {
     private Long id;
 
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    String name;
-    String surname;
-    String gender;
-    String country;
-    String description;
-    LocalDate borndate;
-
+    private String name;
+    private String surname;
+    private String gender;
+    private String country;
+    private String description;
+    private LocalDate borndate;
+    @OneToMany
+    private List<Tourist> touristList;
 
     public Tourist(){
 
@@ -43,6 +38,14 @@ public class Tourist {
         this.borndate = borndate;
     }
 
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
     public void setBorndate(LocalDate borndate) {
         this.borndate = borndate;
     }

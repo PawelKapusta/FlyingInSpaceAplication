@@ -3,6 +3,7 @@ package com.example.demo.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,19 +15,15 @@ public class Flight {
     @GeneratedValue
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     LocalDateTime arrivalDate;
     LocalDateTime departureDate;
     int howManySeats;
-
     double priceForTicket;
+    
+    @OneToMany
+    private List<Flight> flightsList;
+
+
 
     public Flight(){
 
@@ -38,7 +35,13 @@ public class Flight {
         this.howManySeats = howManySeats;
         this.priceForTicket = priceForTicket;
     }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
     public void setArrivalDate(LocalDateTime arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
