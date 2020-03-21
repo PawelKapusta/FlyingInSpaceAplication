@@ -22,10 +22,9 @@ public class TouristController {
     }
 
     @GetMapping("/tourists")
-    public List<Tourist> getTourists( @RequestParam("name") Optional<String> name,
-                                      @RequestParam("surname") Optional<String> surname){
-        if(name.isPresent() && surname.isPresent()){
-            return touristRepository.findAllBy(name.get(),surname.get());
+    public List<Tourist> getTourists( @RequestParam("name") Optional<String> name){
+        if(name.isPresent()){
+            return touristRepository.findAll();
         }else{
             return touristRepository.findAll();
         }

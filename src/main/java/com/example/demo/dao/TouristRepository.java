@@ -10,7 +10,7 @@ import java.util.List;
 public interface TouristRepository extends CrudRepository<Tourist,Long> {
 
     List<Tourist> findAll();
-    List<Tourist> findAllBy(String name, String surname);
+//    List<Tourist> findAllBy(String name, String surname);
     Tourist save(Tourist tourist);
 
 }
