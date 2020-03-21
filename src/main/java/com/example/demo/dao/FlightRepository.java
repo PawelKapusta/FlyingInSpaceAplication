@@ -5,7 +5,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.CrudRepositoryExtensionsKt;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface FlightRepository extends CrudRepository<Flight,Long> {
@@ -14,4 +16,5 @@ public interface FlightRepository extends CrudRepository<Flight,Long> {
 
     Flight save(Flight flight);
 
+    List<Flight> findAllByArrivalDate(Optional<LocalDateTime> arrivalDate);
 }
