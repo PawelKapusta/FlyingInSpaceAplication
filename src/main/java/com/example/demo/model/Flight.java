@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -11,18 +12,18 @@ public class Flight {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    LocalDate arrivalDate;
-    LocalDate departureDate;
+    LocalDateTime arrivalDate;
+    LocalDateTime departureDate;
     int howManySeats;
 
     double priceForTicket;
@@ -31,18 +32,18 @@ public class Flight {
 
     }
 
-    public Flight(LocalDate arrivalDate, LocalDate departureDate, int howManySeats, double priceForTicket) {
+    public Flight(LocalDateTime arrivalDate, LocalDateTime departureDate, int howManySeats, double priceForTicket) {
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.howManySeats = howManySeats;
         this.priceForTicket = priceForTicket;
     }
 
-    public void setArrivalDate(LocalDate arrivalDate) {
+    public void setArrivalDate(LocalDateTime arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
 
-    public void setDepartureDate(LocalDate departureDate) {
+    public void setDepartureDate(LocalDateTime departureDate) {
         this.departureDate = departureDate;
     }
 
@@ -55,11 +56,11 @@ public class Flight {
         this.priceForTicket = priceForTicket;
     }
 
-    public LocalDate getArrivalDate() {
+    public LocalDateTime getArrivalDate() {
         return arrivalDate;
     }
 
-    public LocalDate getDepartureDate() {
+    public LocalDateTime getDepartureDate() {
         return departureDate;
     }
 

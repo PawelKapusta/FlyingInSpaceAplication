@@ -12,7 +12,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 
 
 @Component
@@ -36,8 +36,8 @@ public class DataLoader implements ApplicationRunner {
         touristRepository.save(tourist1);
         touristRepository.save(tourist2);
 
-        flightRepository.save(new Flight(LocalDate.parse("2020-08-12T10:00"),
-                LocalDate.parse("2020-08-12T12:20"),120,125.50));
+        flightRepository.save(new Flight(LocalDateTime.parse("2020-08-12T10:00"),
+                LocalDateTime.parse("2020-08-12T12:20"),120,125.50));
 
 
     }
