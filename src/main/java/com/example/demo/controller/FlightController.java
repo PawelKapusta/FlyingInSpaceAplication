@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.FlightRepository;
+import com.example.demo.dao.TouristRepository;
 import com.example.demo.model.Flight;
 import com.example.demo.model.Tourist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,11 @@ public class FlightController {
 
 
     private FlightRepository flightRepository;
+    private TouristRepository touristRepository;
     @Autowired
-    public FlightController(FlightRepository flightRepository){
+    public FlightController(FlightRepository flightRepository,TouristRepository touristRepository){
         this.flightRepository = flightRepository;
+        this.touristRepository = touristRepository;
     }
 
     @GetMapping("/flights")

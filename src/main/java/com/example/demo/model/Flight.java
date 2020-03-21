@@ -19,10 +19,6 @@ public class Flight {
     LocalDateTime departureDate;
     int howManySeats;
     double priceForTicket;
-    
-    @OneToMany
-    private List<Flight> flightsList;
-
 
 
     public Flight(){

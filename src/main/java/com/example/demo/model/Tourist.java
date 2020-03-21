@@ -15,8 +15,6 @@ public class Tourist {
     @GeneratedValue
     private Long id;
 
-
-
     private String name;
     private String surname;
     private String gender;
@@ -24,7 +22,7 @@ public class Tourist {
     private String description;
     private LocalDate borndate;
     @OneToMany
-    private List<Tourist> touristList;
+    private List<Flight> flightList;
 
     public Tourist(){
 
