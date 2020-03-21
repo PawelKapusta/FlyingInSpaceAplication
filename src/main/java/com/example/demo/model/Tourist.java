@@ -14,6 +14,7 @@ public class Tourist {
     @GeneratedValue
     private Long id;
 
+
     public void setId(Long id) {
         this.id = id;
     }
