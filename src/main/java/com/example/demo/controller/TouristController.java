@@ -23,16 +23,20 @@ public class TouristController {
 
     @GetMapping("/tourists")
     public List<Tourist> getTourists( @RequestParam("name") Optional<String> name){
-        if(name.isPresent()){
-            return touristRepository.findAll();
+        if(name.isPresent() ){
+            return touristRepository.findTouristByName(name.get());
         }else{
             return touristRepository.findAll();
         }
     }
 
-    @PostMapping("/tourists")
+    @PostMapping(path = "/tourists", consumes = "application/json", produces = "application/json")
     public void addTourist(@RequestBody Tourist tourist){
         touristRepository.save(tourist);
+    }
+    @DeleteMapping("/tourists/{id}")
+    public void deleteTourist(@PathVariable(value = "id") Long id){
+        touristRepository.deleteById(id);
     }
 
 

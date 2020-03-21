@@ -5,12 +5,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface TouristRepository extends CrudRepository<Tourist,Long> {
 
     List<Tourist> findAll();
-//    List<Tourist> findAllBy(String name, String surname);
+    List<Tourist> findTouristByName(String name);
     Tourist save(Tourist tourist);
 
 }

@@ -24,12 +24,12 @@ public class FlightController {
     public List<Flight> getFlights(){
         return flightRepository.findAll();
     }
-    @PostMapping("/tourist")
+    @PostMapping("/flights")
     public void addTourist(){
 
     }
 
-    @DeleteMapping("/tourist")
+    @DeleteMapping("/flights")
     public void deleteTourist(){
 
     }
